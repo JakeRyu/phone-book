@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContactsComponent implements OnInit {
 
   filter: any = {};
-  contacts = [];
-  allContacts = [];
+  contacts: any = [];
+  allContacts: any = [];
   query = {
     isSortAscending: false,
     sortBy: 'name'
@@ -19,6 +19,10 @@ export class ContactsComponent implements OnInit {
   constructor(private service: ContactService) { }
 
   ngOnInit() {
+    
+    // this.service.getContacts()
+    //   .subscribe(contacts => this.contacts = contacts);
+    
     this.contacts = this.allContacts = this.service.getContacts();
 
     this.sortBy('name');

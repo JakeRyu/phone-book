@@ -8,8 +8,15 @@ export class ContactService {
   constructor(private http: Http) { }
 
   getContacts() {
-    // The api doesn't allow remote access.
-    // If it has CORS configuration in place, I could've consumed the data directiry
+    
+    // Angular developers may encounter a cross-origin resource sharing error when making 
+    // a service request (typically a data service request). to a server other than the application's own host server. 
+    // Browsers forbid such requests unless the server permits them explicitly.
+    
+    // There isn't anything the client application can do about these errors. 
+    // The server must be configured to accept the application's requests. 
+    // Read about how to enable CORS for specific servers at enable-cors.org.
+
     // return this.http.get('http://www.mocky.io/v2/581335f71000004204abaf83')
     //   .map(res => res.json);
 
