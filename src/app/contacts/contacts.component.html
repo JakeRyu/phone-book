@@ -1,0 +1,35 @@
+<div class="well">
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="filter.name" (keyup.enter)="onKeyUp()">
+  </div>
+  <button class="btn btn-primary" (click)="onFilterChange()">Search</button>
+  <button class="btn btn-default" (click)="resetFilter()">Reset</button>
+</div>
+
+<table class="table">
+  <thead>
+    <th (click)="sortBy('name')">
+      Name
+      <i class="fa" 
+          [class.fa-sort-asc]="query.sortBy == 'name' && query.isSortAscending" 
+          [class.fa-sort-desc]="query.sortBy == 'name' && !query.isSortAscending"></i>
+    </th>
+    <th (click)="sortBy('phone_number')">
+      Phone Number
+      <i class="fa" 
+          [class.fa-sort-asc]="query.sortBy == 'phone_number' && query.isSortAscending" 
+          [class.fa-sort-desc]="query.sortBy == 'phone_number' && !query.isSortAscending"></i>
+    </th>
+    <th (click)="sortBy('address')">
+      Address
+      <i class="fa" 
+          [class.fa-sort-asc]="query.sortBy == 'address' && query.isSortAscending" 
+          [class.fa-sort-desc]="query.sortBy == 'address' && !query.isSortAscending"></i>
+    </th>
+  </thead>
+  <tr *ngFor="let c of contacts">
+    <td>{{ c.name }}</td>
+    <td>{{ c.phone_number }}</td>
+    <td>{{ c.address }}</td>
+  </tr>
+</table>
