@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
 
+![Phone Book](/src/assets/phone-book.png)
+
+![Phone Book Filtered](/src/assets/phone-book-filtered.png)
+
 ## Run the app
 
 In order to run the application, you need to have node & angular cli installed in your machine. 
